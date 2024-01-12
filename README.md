@@ -21,7 +21,7 @@ The replication package is organized as follows:
 
 * [requirements](./requirements) - txt files with Python packages and versions for replication
 
-* [data](./data) - all raw datasets used for training
+* [data](./data) - all raw datasets used for training (to be found in Zenodo [10.5281/zenodo.7608802](https://doi.org/10.5281/zenodo.7608802))
   * raw
     * devign          - Devign
     * reveal          - ReVeal
@@ -266,8 +266,8 @@ If you build on this data or code, please cite this work by referring to the pap
    booktitle = {ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)},
    year = {2023},
    publisher = {ACM},
-   url = {https://dl.acm.org/doi/abs/10.1145/3611643.3616304},
-   note = {To appear. Pre-print on arXiv at https://arxiv.org/abs/2305.04940}
+   doi = {https://doi.org/10.1145/3611643.3616304},
+   note = {Pre-print on arXiv at https://arxiv.org/abs/2305.04940}
 }
 ```
 
