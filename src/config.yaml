@@ -1,0 +1,57 @@
+#---------------------
+# PATHS
+#---------------------
+project_path: './'
+#---------------------
+
+devign:
+  raw                       : 'data/raw/devign'
+  processed:
+    train_data_path         : 'data/processed-final/devign/train.jsonl'
+    valid_data_path         : 'data/processed-final/devign/valid.jsonl'
+    test_data_path          : 'data/processed-final/devign/test.jsonl'
+  label_encoder_path        : 'checkpoints/generated/label_encoder/devign/label_encoder.joblib'
+  dataset_characteristics   : 'data/processed-final/devign/dataset_characteristics'
+  spaces_in_tab             : 4
+
+reveal:
+  raw                       : 'data/raw/reveal'
+  processed:
+    train_data_path         : 'data/processed-final/reveal/train.jsonl'
+    valid_data_path         : 'data/processed-final/reveal/valid.jsonl'
+    test_data_path          : 'data/processed-final/reveal/test.jsonl'
+  label_encoder_path        : 'checkpoints/generated/label_encoder/reveal/label_encoder.joblib'
+  dataset_characteristics   : 'data/processed-final/reveal/dataset_characteristics'
+  n_subsets                 : 4
+  spaces_in_tab             : 4
+
+break_it_fix_it:
+  raw                       : 'data/raw/break_it_fix_it/orig_bad_code'
+  processed:
+    train_data_path         : 'data/processed-final/break_it_fix_it/train.jsonl'
+    valid_data_path         : 'data/processed-final/break_it_fix_it/valid.jsonl'
+    test_data_path          : 'data/processed-final/break_it_fix_it/test.jsonl'
+  label_encoder_path        : 'checkpoints/generated/label_encoder/break_it_fix_it/label_encoder.joblib'
+  dataset_characteristics   : 'data/processed-final/break_it_fix_it/dataset_characteristics'
+  n_subsets                 : 0
+  spaces_in_tab             : 4
+
+exception:
+  raw                       : 'data/raw/exception'
+  processed:
+    train_data_path         : 'data/processed-final/exception/train.jsonl'
+    valid_data_path         : 'data/processed-final/exception/valid.jsonl'
+    test_data_path          : 'data/processed-final/exception/test.jsonl'
+  label_encoder_path        : 'checkpoints/generated/label_encoder/exception/label_encoder.joblib'
+  dataset_characteristics   : 'data/processed-final/exception/dataset_characteristics'
+  n_subsets                 : 4
+  spaces_in_tab             : 4
+
+#---------------------
+model_reused        : 'checkpoints/reused/'
+model_generated     : 'checkpoints/generated/'
+#---------------------
+output              : 'output/'
+logs                : 'output/logs/'
+tables              : 'output/tables/'
+figures             : 'output/figures/'
