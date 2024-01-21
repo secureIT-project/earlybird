@@ -96,3 +96,6 @@ target/
 *logs/
 *output/
 
+# Data
+data/
+
