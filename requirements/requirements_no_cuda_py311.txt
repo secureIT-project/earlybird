@@ -1,0 +1,9 @@
+jsonlines
+mlflow
+pathlib
+torch==2.1.2
+transformers==4.37.1
+joblib
+scikit-learn
+PyYAML
+matplotlib

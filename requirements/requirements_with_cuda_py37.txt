@@ -1,0 +1,8 @@
+jsonlines
+mlflow
+pathlib
+transformers
+joblib
+scikit-learn
+PyYAML
+matplotlib

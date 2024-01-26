@@ -38,7 +38,10 @@ The overall organization of the current repository is as follows:
 
 ## Usage
 
-Python version: `3.7.9` (later versions should also work well); CUDA version: `11.6`; Git LFS.
+Prerequisites: Git LFS.
+
+The code was initially optimized for Python version: `3.7.9` and PyTorch `1.12.1`: see `requirements/requirements_no_cuda_py37.txt`.
+However, due to libraries updates and fixed vulnerabilities, we have updated requirements for Python `3.11` and PyTorch `2.1.2`: see `requirements/requirements_no_cuda_py311.txt`. 
 
 Commands below work well on Mac or Linux and should be adapted if you have a Windows machine. 
 
@@ -78,16 +81,45 @@ source venv/bin/activate
 
 ##### 3.1 No CUDA
 
+
+For Python `3.7` and PyTorch `1.12`:
 ```
-python -m pip install -r requirements/requirements_no_cuda.txt
+python -m pip install -r requirements/requirements_no_cuda_py37.txt 
 ```
+
+For Python `3.11`, PyTorch `2.1.2`:
+```
+python -m pip install -r requirements/requirements_no_cuda_py311.txt 
+```
+
+Because the code is initially written for an earlier PyTorch version, consider suppressing warnings by adding the following to `run.py` if you have install PyTorch `>=2.0`:
+```
+import torch._dynamo
+torch._dynamo.config.suppress_errors = True
+```
+
 
 ##### 3.2 With CUDA (to run on GPU)
 
+For Python `3.7`, PyTorch `1.12` and CUDA `11.6`:
 ```
-python -m pip install -r requirements/requirements_with_cuda.txt
-python -m pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+python -m pip install -r requirements/requirements_with_cuda_py37.txt # torch is not listed in these requirements
+
+pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
 ```
+
+For Python `3.11` and PyTorch `>=2.0` and the latest CUDA, install all the packages except PyTorch:
+```
+python -m pip install -r requirements/requirements_with_cuda_py311.txt # torch is not listed in these requirements
+```
+
+and then install PyTorch separately:
+```
+pip3 install torch torchvision torchaudio
+```
+
+or follow the instructions at [PyTorch Get Started](https://pytorch.org/get-started/locally/) and
+[PyTorch previous versions](https://pytorch.org/get-started/previous-versions/) guides to install a PyTorch distribution for a suitable CUDA version.
 
 
 #### 4 Preprocess data
